@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+       background-color:rgb(140, 164, 207)
+        
+    }
+    h1 {
+    
+        display: flex;
+        justify-content: center;
+            flex direction: row;
+        
+
+    }
+    form {
+    background-color: rgb(85, 84, 84);
+    padding: 20px;
+    width: 1500px; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+input {
+    
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+} 
+
+    button {
+    background-color: #008CBA;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+</style>
+<body>
+    
+    
+    <h1><i> Enter YOur Age Please  </i> </h1>
+
+    <form onsubmit="agechecker(event)">
+       Enter your age: <input id="ageInput" type="number" required step="0.01">
+        <br>
+        
+        <button>Enter</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    
+
+    <script>
+         function agechecker(event) {
+
+event.preventDefault();
+let ageInput = document.querySelector("#ageInput").value;
+ageInput = Number(ageInput);
+
+console.log(ageInput);
+
+let message = "";
+
+if (ageInput <=13) {
+    message = "you are minor"
+} 
+
+else if(ageInput <=40){
+    message = "you are young"
+}
+  else  {
+   message = "you are old"
+}
+document.querySelector("#resultWindow").innerHTML = message
+
+}
+
+    </script>
+</body>
+</html>
